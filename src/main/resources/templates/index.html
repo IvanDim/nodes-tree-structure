@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="styles_default">
+    <title>Nodes app</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" th:href="@{images/icons/favicon.ico}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/animate/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/css-hamburgers/hamburgers.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/select2/select2.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/util.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+</head>
+<body>
+
+<div class="contact1">
+    <div class="container-contact1">
+        <div class="contact1-pic" data-tilt>
+            <div id="tree"></div>
+        </div>
+
+        <div class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Node ID:
+                    <label id="selected">1</label>
+				</span>
+            <div class="container-contact1-form-btn">
+                <button id="get-subtree" class="contact1-form-btn">
+						<span>
+							GET CHILDREN
+						</span>
+                </button>
+            </div>
+            <div class="container-contact1-form-btn">
+                    <div class="wrap-i validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input1" type="text" name="text" placeholder="New parent ID">
+                    <span class="shadow-input1"></span>
+                </div>
+                <button id="edit-node" class="contact1-form-btn">
+						<span>
+							UPDATE
+						</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/popper.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{vendor/select2/select2.min.js}"></script>
+<script th:src="@{vendor/swal/sweetalert2.min.js}"></script>
+<script th:src="@{js/main.js}"></script>
+<script th:src="@{js/tree.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</body>
+</html>

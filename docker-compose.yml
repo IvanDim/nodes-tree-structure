@@ -1,0 +1,30 @@
+version: '3'
+services:
+  nodes-server:
+    image: nodes-server
+    ports:
+      - 8086:8086
+    depends_on:
+      - docker-mysql
+    networks:
+      nodes-network:
+        aliases:
+          - nodes-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://docker-mysql/nodes_server?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=root
+  docker-mysql:
+    image: mysql:8
+    ports:
+      - 3308:3306
+    networks:
+      nodes-network:
+        aliases:
+          - docker-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=user
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbpass
+      - MYSQL_DATABASE=nodes_server
+networks:
+  nodes-network:
